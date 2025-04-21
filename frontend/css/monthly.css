@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background: #3f2e56;
+    color: white;
+    padding: 25px 20px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: #8d62bf;
+  }
+  
+  main.main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  /* ========= Goals ========= */
+  .goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .goal-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+  }
+  
+  .goal-card:hover {
+    background: #f3f3ff;
+  }
+  
+  .goal-card.In\ Progress {
+    background-color: #fff9c4; /* light yellow */
+  }
+  
+  .goal-card.Completed {
+    background-color: #c8e6c9; /* light green */
+  }
+  
+  /* ========= Calendar ========= */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+  
+  .calendar-grid div {
+    background: #f0f0f0;
+    height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  
+  /* ========= Google Calendar Button ========= */
+  .google-btn {
+    padding: 12px 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .google-btn:hover {
+    background-color: #357ae8;
+  }
+  
+  /* ========= Modal (Popup) ========= */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 25px;
+    max-width: 400px;
+    margin: 10% auto;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #777;
+  }
+  
+  #goalForm input,
+  #goalForm textarea,
+  #goalForm select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  #goalForm button {
+    width: 100%;
+    background: #7b4fe0;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #goalForm button:hover {
+    background: #5d37c0;
+  }
+  

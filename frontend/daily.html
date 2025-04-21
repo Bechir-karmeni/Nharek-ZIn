@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nhare Zin – Daily Planner</title>
+  <link rel="stylesheet" href="css/daily.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>JoyPlanner ✨</h2>
+      <ul>
+        <li><a href="daily.html" class="active">📅 Daily</a></li>
+        <li><a href="weekly.html">🗓️ Weekly</a></li>
+        <li><a href="monthly.html">📆 Monthly</a></li>
+        <li><a href="dashboard.html">📊 Stats</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <section class="water">
+        <h2>💧 Water Tracker</h2>
+        <input type="number" id="waterInput" placeholder="Amount (ml)">
+        <button onclick="addWater()">+ Add</button>
+        <p>Today you drank: <span id="waterTotal">0</span> ml</p>
+      </section>
+
+      <section class="mood">
+        <h2>How are you feeling today? 🤔</h2>
+        <select id="moodSelect">
+          <option value="">-- Choose your mood --</option>
+          <option value="😊">Happy</option>
+          <option value="😐">Neutral</option>
+          <option value="😔">Sad</option>
+          <option value="😍">Excited</option>
+          <option value="😴">Tired</option>
+        </select>
+        <button onclick="saveMood()">Save Mood</button>
+        <p>Your mood today: <span id="currentMood">None yet</span></p>
+      </section>
+
+      <section class="tasks">
+        <h2>Today's Tasks 📝</h2>
+        <input type="text" id="taskInput" placeholder="Add a task">
+        <button onclick="addTask()">+ Add Task</button>
+        <ul id="taskList"></ul>
+      </section>
+
+      <section class="contacts">
+        <h2>👥 People to Connect With</h2>
+        <input type="text" id="contactName" placeholder="Name">
+        <input type="text" id="contactEmail" placeholder="Email">
+        <input type="text" id="contactPhone" placeholder="Phone">
+        <input type="text" id="contactLabel" placeholder="Label (e.g. Doctor)">
+        <button onclick="addContact()">+ Add Contact</button>
+        <ul id="contactList"></ul>
+      </section>
+
+      <section class="notes">
+        <h2>📝 Quick Notes</h2>
+        <textarea id="noteInput" placeholder="Write a note..."></textarea><br>
+        <button onclick="addNote()">+ Add</button>
+        <ul id="noteList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/daily.js"></script>
+</body>
+</html>

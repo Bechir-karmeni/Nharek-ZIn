@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nharek Zin – Daily Planner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #e0c3fc, #8ec5fc);
+      color: #333;
+    }
+    .marquee {
+      background: #4a148c;
+      color: white;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #4a148c;
+    }
+    p {
+      text-align: center;
+    }
+    .section {
+      margin-top: 30px;
+    }
+    .form-group input, .form-group button, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #4a148c;
+      color: white;
+      border: none;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6a1b9a;
+    }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .form-column {
+      flex: 1;
+      min-width: 260px;
+    }
+    .quote {
+      font-style: italic;
+      font-size: 18px;
+      color: #444;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .about, .contact {
+      background: #f3e5f5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marquee">
+    <marquee behavior="scroll" direction="left">📢 Stay organized, stay focused, and take control of your day with <strong>Nhare Zin</strong> – Your ultimate daily planner app!</marquee>
+  </div>
+
+  <div class="container">
+    <h1>Nharek Zin</h1>
+    <p class="quote">“A goal without a plan is just a wish.” – Antoine de Saint-Exupéry</p>
+
+    <div class="form-row">
+      <div class="form-column">
+        <div class="section">
+          <h3>🔑 Login</h3>
+          <div class="form-group">
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-column">
+        <div class="section">
+          <h3>📝 Signup</h3>
+          <div class="form-group">
+            <input type="text" id="signupName" placeholder="Name">
+            <input type="email" id="signupEmail" placeholder="Email">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <button onclick="signup()">Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section about">
+      <h3>📚 About Nhare Zin</h3>
+      <p>
+        <strong>Nharek Zin</strong> is a powerful and intuitive daily planner app designed to help you take control of your life.
+        Whether you're tracking tasks, water intake, moods, expenses, or goals – Nhare Zin is your ultimate all-in-one productivity companion.
+        Stay focused, stay accountable, and make every day count.
+      </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section contact">
+      <h3>📬 Contact Us</h3>
+      <p>If you have any questions, feedback, or issues, feel free to reach out to us at:</p>
+      <p><strong>Email:</strong> support@nharezin.app</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/nharezin" target="_blank">@nharezin</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/nharezin" target="_blank">github.com/nharezin</a></p>
+    </div>
+
+    <footer>
+      &copy; 2024 Nhare Zin. All rights reserved.
+    </footer>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

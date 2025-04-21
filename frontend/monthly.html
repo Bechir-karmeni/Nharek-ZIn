@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nhare Zin – Monthly Planner</title>
+  <link rel="stylesheet" href="css/monthly.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Nhare Zin</h2>
+      <ul>
+        <li><a href="daily.html">📅 Daily</a></li>
+        <li><a href="weekly.html">🗓️ Weekly</a></li>
+        <li><a href="monthly.html" class="active">📆 Monthly</a></li>
+        <li><a href="dashboard.html">📊 Dashboard</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Goals Section -->
+      <section class="goals-section">
+        <h2>🎯 Monthly Goals</h2>
+        <div class="goals-grid" id="goalsGrid">
+          <!-- 6 goal cards -->
+          <div class="goal-card" onclick="window.editGoal(0)">
+            <h3>Goal 1</h3>
+            <p id="goalText0">Click to add goal</p>
+          </div>
+          <div class="goal-card" onclick="window.editGoal(1)">
+            <h3>Goal 2</h3>
+            <p id="goalText1">Click to add goal</p>
+          </div>
+          <div class="goal-card" onclick="window.editGoal(2)">
+            <h3>Goal 3</h3>
+            <p id="goalText2">Click to add goal</p>
+          </div>
+          <div class="goal-card" onclick="window.editGoal(3)">
+            <h3>Goal 4</h3>
+            <p id="goalText3">Click to add goal</p>
+          </div>
+          <div class="goal-card" onclick="window.editGoal(4)">
+            <h3>Goal 5</h3>
+            <p id="goalText4">Click to add goal</p>
+          </div>
+          <div class="goal-card" onclick="window.editGoal(5)">
+            <h3>Goal 6</h3>
+            <p id="goalText5">Click to add goal</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monthly Calendar -->
+      <section class="calendar-section">
+        <h2>📅 Calendar</h2>
+        <div id="calendar" class="calendar-grid">
+          <!-- JS injects calendar or Google iframe here -->
+        </div>
+      </section>
+
+      <!-- Google Calendar Sync -->
+
+    </main>
+  </div>
+
+  <!-- 🧩 Goal Modal -->
+  <div class="modal" id="goalModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="window.closeModal()">&times;</span>
+      <h3>Edit Goal</h3>
+      <form id="goalForm">
+        <input type="hidden" id="goalIndex" />
+
+        <label for="goalName">Goal Name</label>
+        <input type="text" id="goalName" placeholder="Enter goal name" required />
+
+        <label for="goalDesc">Description</label>
+        <textarea id="goalDesc" placeholder="Goal description (optional)"></textarea>
+
+        <label for="goalStatus">Status</label>
+        <select id="goalStatus" required>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit">💾 Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/monthly.js"></script>
+</body>
+</html>

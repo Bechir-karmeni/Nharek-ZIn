@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nhare Zin – Weekly Planner</title>
+  <link rel="stylesheet" href="css/weekly.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Nhare Zin</h2>
+      <ul>
+        <li><a href="daily.html">📅 Daily</a></li>
+        <li><a href="weekly.html" class="active">🗓️ Weekly</a></li>
+        <li><a href="monthly.html">📆 Monthly</a></li>
+        <li><a href="dashboard.html">📊 Dashboard</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <section>
+        <h2>🗓️ Weekly Planner</h2>
+
+        <!-- Weekly Calendar Grid -->
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <div class="time-col-header"></div>
+            <div class="day-col-header">Sunday</div>
+            <div class="day-col-header">Monday</div>
+            <div class="day-col-header">Tuesday</div>
+            <div class="day-col-header">Wednesday</div>
+            <div class="day-col-header">Thursday</div>
+            <div class="day-col-header">Friday</div>
+            <div class="day-col-header">Saturday</div>
+          </div>
+          <div class="calendar-body" id="calendarBody"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 🔥 Popup Modal for Task Input -->
+  <div id="taskPopup" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closePopupBtn">&times;</span>
+      <h3>Add Task</h3>
+      <p><strong>Date:</strong> <span id="modalDate"></span></p>
+      <p><strong>Time:</strong> <span id="modalHour"></span></p>
+      <form id="popupForm">
+        <input type="text" id="popupTitle" placeholder="Task title" required />
+        <textarea id="popupDescription" placeholder="Description (optional)"></textarea>
+        <button type="submit">Save Task</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/weekly.js"></script>
+</body>
+</html>

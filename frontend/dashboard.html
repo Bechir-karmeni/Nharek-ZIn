@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard – Nhare Zin</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #3f2e56;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li a.active,
+    .sidebar ul li a:hover {
+      background: #8d62bf;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    input, select, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    input[type="number"] {
+      width: 120px;
+    }
+
+    button {
+      background: #6c5ce7;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5a4fcf;
+    }
+
+    .budget-total {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .item-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .item-list li {
+      margin: 5px 0;
+      padding: 8px 12px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .visualization {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .visualization h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #categoryChart {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Nhare Zin</h2>
+      <ul>
+        <li><a href="daily.html">📅 Daily</a></li>
+        <li><a href="weekly.html">🗓️ Weekly</a></li>
+        <li><a href="monthly.html">📆 Monthly</a></li>
+        <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main dashboard -->
+    <main class="main">
+      <!-- Quote of the day -->
+      <section class="quote">
+        <h2>🌟 Today's Motivation</h2>
+        <p id="quoteText">Loading...</p>
+      </section>
+
+      <!-- Tasks -->
+      <section class="tasks">
+        <h2>📝 Today's Tasks</h2>
+        <ul id="todayTasks" class="item-list"></ul>
+      </section>
+
+      <!-- Water Tracker -->
+      <section class="water">
+        <h2>💧 Water Tracker</h2>
+        <p>You drank <strong><span id="waterTotal">0</span></strong> glasses today.</p>
+      </section>
+
+      <!-- Budget Tracker -->
+      <section class="overview">
+        <h2>💸 Budget Tracker</h2>
+        <form id="expenseForm" onsubmit="addExpense(); return false;">
+          <div class="form-row">
+            <input type="number" id="amountInput" placeholder="Amount (DA)" required />
+            <input type="text" id="descInput" placeholder="Description" />
+            <select id="categoryInput" required>
+              <option value="">Select Category</option>
+              <option value="Food">🍽 Food</option>
+              <option value="Transport">🚗 Transport</option>
+              <option value="Shopping">🛍 Shopping</option>
+              <option value="Entertainment">🎮 Entertainment</option>
+              <option value="Bills">💡 Bills</option>
+              <option value="Health">💊 Health</option>
+              <option value="Salary">💰 Salary</option>
+              <option value="Other">📦 Other</option>
+            </select>
+            <select id="typeSelect" required>
+              <option value="expense">💸 Expense</option>
+              <option value="income">💰 Income</option>
+            </select>
+            <button type="submit">➕ Add</button>
+          </div>
+        </form>
+        <p class="budget-total">Total Budget: <strong><span id="budgetTotal">0</span> DA</strong></p>
+        <ul id="expenseList" class="item-list"></ul>
+      </section>
+
+      <!-- Visualization -->
+      <section class="visualization">
+        <h3>📊 Expense Breakdown by Category</h3>
+        <canvas id="categoryChart" width="300" height="300"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
